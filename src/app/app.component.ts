@@ -13,15 +13,17 @@ export class AppComponent {
   mArticles: Array<any>;
   mSources: Array<any>;
 
-  constructor (private apiService: NewsApiService)
+  constructor (private newsapi: NewsApiService)
   {
     console.log('app component constructor called'); 
   }
 
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    
-  }
+  ngOnInit() 
+  {
+    //load articles
+    this.newsapi.initArticles().subscribe(data => this.mArticles = data['articles']);
+    //load news sources
+    this.newsapi.initSources().subscribe(data=> this.mSources = data['sources']);  
+}
 
 }

@@ -18,4 +18,3 @@ export class NewsApiService {
    return this.http.get('https://newsapi.org/v2/top-headlines?sources='+source+'&apiKey='+this.api_key);
   }
 }
-}

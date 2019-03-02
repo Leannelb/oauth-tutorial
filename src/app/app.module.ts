@@ -6,6 +6,7 @@ import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIco
 import { AppComponent } from './app.component';
 import { Material } from './app-material';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsApiService } from './news-api.service';
 
 @NgModule({
   declarations: [
